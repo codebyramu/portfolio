@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramu | AI & ML Developer | Code. Music. Craft.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  
+  <canvas id="webgl-canvas"></canvas>
+
+  <div id="app">
+    <nav class="glass-nav">
+      <div class="logo">RAMU.</div>
+      <div class="nav-links">
+        <a href="#about">Story</a>
+        <a href="#experience">Experience</a>
+        <a href="#ethos">Ethos</a>
+        <a href="#domains">Domains</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <main id="smooth-wrapper">
+      <div id="smooth-content">
+        
+        <section id="intro-sequence" class="cinematic-intro">
+          <div class="intro-pin-container">
+            
+            <div class="intro-text-container" id="intro-text-container">
+              <h1 class="giant-title glitch-gradient" id="main-title"><span id="hi-text">HI</span><span id="ramu-text">, I'M RAMU</span></h1>
+              <p class="intro-subtitle" id="subtitle-text">
+                Second-year B.Tech CSE (AI & ML) student at VISTAS Chennai<br>
+                <span class="badge-gold">Frontend Intern @ Connect N Build · UI/UX Designer</span>
+              </p>
+            </div>
+
+            <div class="avatar-wrapper" id="avatar-container">
+              <canvas id="avatar-canvas"></canvas>
+            </div>
+            
+            <canvas id="explosion-canvas" style="position: absolute; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index: 10;"></canvas>
+            
+            <div class="info-box box-1" id="box-1">
+              <div class="pointer p-1"></div>
+              <p>I am Ramu</p>
+            </div>
+            <div class="info-box box-2" id="box-2">
+              <div class="pointer p-2"></div>
+              <p>Currently in 2nd year</p>
+            </div>
+            <div class="info-box box-3" id="box-3">
+              <div class="pointer p-3"></div>
+              <p>I know Python, C, C++ and currently learning JS and HTML</p>
+            </div>
+            
+            <div class="welcome-wrapper" id="welcome-wrapper">
+              <h1 class="glitch-vintage" data-text="Welcome To My Portfolio">Welcome To My Portfolio</h1>
+            </div>
+            
+          </div>
+        </section>
+
+        <section id="hero" class="panel">
+          <div class="hero-content stereo-card tilt-card">
+            <h1 class="glitch" data-text="Code. Music. Craft.">Code. Music. Craft.</h1>
+            <p class="tagline">I build things that feel alive.<br><strong style="color: var(--accent-gold); font-size: 1.1rem; margin-top: 10px; display: inline-block;">Frontend Intern @ Connect N Build · UI/UX Designer</strong></p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-value">AI/ML</span>
+                <span class="stat-label">Engineering</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">Creative</span>
+                <span class="stat-label">Technologist</span>
+              </div>
+            </div>
+            <a href="#projects" class="btn-primary">Explore My Timeline</a>
+          </div>
+        </section>
+
+        <section id="about" class="panel">
+          <div class="about-grid">
+            <div class="glass-card bio-card tilt-card">
+              <h2>My Story</h2>
+              <p>I'm Ramu. I'm not like most people who just use apps and move on. Whenever I see an app, website, or tool, one question always hits my mind: <em>"Why not build one myself — and make it open source?"</em></p>
+              <p>That mindset is what drives me. I don't just consume technology. I break it down, understand it, and rebuild it my own way. I think in systems, not features. I reverse-engineer first, and I optimize for natural flow. I hate friction.</p>
+              <p>I am a second-year B.Tech CSE student, but I ship client work. I am a Carnatic musician who codes audio engines. I direct a peer mentorship network while being a student myself. I applied to a major AI hackathon, didn't get in, and kept building anyway.</p>
+            </div>
+            <div class="glass-card skills-card tilt-card">
+              <h3>Tech Arsenal</h3>
+              <ul class="skills-list">
+                <li><strong>Languages:</strong> HTML, JS, TS, Python, C++</li>
+                <li><strong>Web / UI:</strong> React, Next.js, Responsive UI, GSAP, WebGL</li>
+                <li><strong>Deployment:</strong> Vercel, Production Workflows</li>
+                <li><strong>Audio Eng:</strong> Web Audio API, Silero VAD, Pitch Detection, DSP</li>
+                <li><strong>AI / ML:</strong> RAG, Multi-agent pipelines, Anthropic API, OpenRouter</li>
+                <li><strong>Systems:</strong> Ubuntu Linux, evdev, C++ PortAudio, Git</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="panel">
+          <h2 class="section-title">Professional Experience</h2>
+          <div class="projects-container">
+            <div class="project-card stereo-card tilt-card" style="grid-column: 1 / -1; width: 100%;">
+              <div class="project-info">
+                <h3>Frontend Developer & UI/UX Designer Intern @ Connect N Build</h3>
+                <p><strong>Status: Currently active</strong> | Working on real client production environments while in my second year of B.Tech. Executing design-to-development pipelines, building UI systems, responsive designs, and product structuring for diverse domains.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ethos" class="panel">
+          <h2 class="section-title">The Builder's Ethos</h2>
+          <div class="projects-container">
+            <div class="project-card stereo-card tilt-card">
+              <div class="project-info">
+                <h3>Vibe Coding via AGY CLI</h3>
+                <p>I write plain English prompts, not raw code, to drive complex builds. I treat my dev environment like an engineer. Token efficiency is real—no comments, no extra blank lines. I compress architecture itself.</p>
+              </div>
+            </div>
+            <div class="project-card stereo-card tilt-card">
+              <div class="project-info">
+                <h3>Linux Power User</h3>
+                <p>Ubuntu is my daily driver. I manage packages, troubleshoot keyrings, and write scripts to automate window behavior. I built a custom Python auto-clicker using <code>evdev</code> avoiding <code>grab()</code> so the keyboard stays functional.</p>
+              </div>
+            </div>
+            <div class="project-card stereo-card tilt-card">
+              <div class="project-info">
+                <h3>Collaboration & Leadership</h3>
+                <p>Solo by default. Ubuntu guy on the team. I co-led BAH 2026. Director of Ekalavya (Project A) managing an 8-member core team, designing curriculum, and teaching Python to 30–60 students. I learn together and grow faster.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="domains" class="panel">
+          <h2 class="section-title">Domains of Mastery</h2>
+          <div class="projects-container">
+            <div class="project-card stereo-card tilt-card">
+              <div class="project-info">
+                <h3>Carnatic Music & Audio</h3>
+                <p>Violin player. I understand Sarali Varisai and Shruti deeply enough to build VOCARA and TuneMate from genuine domain knowledge. I caught granular frequency bugs in classical lessons and forced strict mathematical recalculations.</p>
+              </div>
+            </div>
+            <div class="project-card stereo-card tilt-card">
+              <div class="project-info">
+                <h3>Gaming & Canvas Hacking</h3>
+                <p>I play games and engineer them. I study Canvas 2D engine boundaries to design customized hotkeys and pointer-lock bypass scripts. I edit competitive PvP combat videos for KingRamu_Gamer.</p>
+              </div>
+            </div>
+            <div class="project-card stereo-card tilt-card">
+              <div class="project-info">
+                <h3>Strategic Chess</h3>
+                <p>I strictly command the black pieces during tactical opening variations. I calculate entirely via standard algebraic coordinate notation (e4, c5, Nf6) to map out sharp defensive structures and counter-attacks.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="panel">
+          <h2 class="section-title">Selected Work</h2>
+          <div class="projects-container">
+            
+            <div class="project-card stereo-card tilt-card">
+              <button class="read-more-btn" data-modal="modal-sasta">Read More</button>
+              <div class="project-info">
+                <h3>Sasta Trust</h3>
+                <p>Production donation platform for a religious charity. Features live donor leaderboards, UPI integration, and Google OAuth.</p>
+                <div class="tags"><span>UI/UX</span><span>Frontend</span><span>Vercel</span></div>
+              </div>
+              <a href="https://sasta-trust-app.vercel.app/" target="_blank" class="card-link">Link ↗</a>
+            </div>
+
+            <div class="project-card stereo-card tilt-card">
+              <button class="read-more-btn" data-modal="modal-amrut">Read More</button>
+              <div class="project-info">
+                <h3>Amrut Satvik Foods</h3>
+                <p>E-commerce platform for organic foods. Focuses on product display, shopping UX, and conversion-oriented product flow.</p>
+                <div class="tags"><span>E-Commerce</span><span>Frontend</span><span>Vercel</span></div>
+              </div>
+              <a href="https://amrutsatvikfoodsv2.vercel.app/" target="_blank" class="card-link">Link ↗</a>
+            </div>
+
+            <div class="project-card stereo-card tilt-card">
+              <button class="read-more-btn" data-modal="modal-temple">Read More</button>
+              <div class="project-info">
+                <h3>Bhaskararajapuram Temple</h3>
+                <p>Immersive village & heritage storytelling website. Deep focus on spiritual design and cultural preservation.</p>
+                <div class="tags"><span>UI/UX</span><span>Storytelling</span><span>Vercel</span></div>
+              </div>
+              <a href="https://temple-111.vercel.app/" target="_blank" class="card-link">Link ↗</a>
+            </div>
+
+            <div class="project-card stereo-card tilt-card">
+              <button class="read-more-btn" data-modal="modal-vocara">Read More</button>
+              <div class="project-info">
+                <h3>VOCARA</h3>
+                <p>Real-time voice-to-MIDI web app. Hum or sing a melody, and it converts directly to MIDI notes. Captures creativity as sound.</p>
+                <div class="tags"><span>Web Audio</span><span>AI</span><span>JS</span></div>
+              </div>
+              <a href="#" class="card-link">Link ↗</a>
+            </div>
+
+            <div class="project-card stereo-card tilt-card">
+              <button class="read-more-btn" data-modal="modal-projectv">Read More</button>
+              <div class="project-info">
+                <h3>Project V (Ekalavya)</h3>
+                <p>Skill-tracking portfolio platform creating a developmental timeline for recruiters. <strong>🏆 3rd Prize + ₹2,000 at Velsathon 2026.</strong></p>
+                <div class="tags"><span>Next.js</span><span>Supabase</span><span>GitHub API</span></div>
+              </div>
+              <a href="#" class="card-link">Link ↗</a>
+            </div>
+
+            <div class="project-card stereo-card tilt-card">
+              <button class="read-more-btn" data-modal="modal-bloxd">Read More</button>
+              <div class="project-info">
+                <h3>BloxdioCoderAI</h3>
+                <p>Dual-AI RAG pipeline for Bloxd.io game scripting. Drop OpenRouter keys, prompt to build games in JS. Reduces 60k token burn.</p>
+                <div class="tags"><span>RAG</span><span>OpenRouter</span><span>JS</span></div>
+              </div>
+              <a href="https://codebyramu.github.io/BloxdioCoderAI/" target="_blank" class="card-link">Link ↗</a>
+            </div>
+
+            <div class="project-card stereo-card tilt-card">
+              <button class="read-more-btn" data-modal="modal-screamzone">Read More</button>
+              <div class="project-info">
+                <h3>ScreamZone</h3>
+                <p>Voice-controlled rhythm game platform. 3 game modes fusing gaming, sound engineering, and reaction speed. High sound = jump.</p>
+                <div class="tags"><span>Web Audio</span><span>Silero VAD</span><span>JS</span></div>
+              </div>
+              <a href="#" class="card-link">Link ↗</a>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="contact" class="panel">
+          <div class="contact-card glass-card tilt-card">
+            <h2>Let's build something.</h2>
+            <p>Got a problem worth solving? Looking for an intern who ships production-grade products?</p>
+            <div class="social-links">
+              <a href="https://github.com/codebyramu" target="_blank" class="btn-secondary">GitHub</a>
+              <a href="https://x.com/codebyramu" target="_blank" class="btn-secondary">X (Twitter)</a>
+              <a href="https://youtube.com/@KingRamu_Gamer" target="_blank" class="btn-secondary">YouTube</a>
+              <a href="https://leetcode.com/codebyramu" target="_blank" class="btn-secondary">LeetCode</a>
+            </div>
+          </div>
+          <footer>
+            <p>Handle: codebyramu | Location: Chennai, Tamil Nadu, India</p>
+          </footer>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="modal-vocara">
+    <div class="modal-content glass-card tilt-card">
+      <button class="modal-close">&times;</button>
+      <h2>VOCARA</h2>
+      <p>VOCARA is a music production tool inspired by digital audio workstations like LMMS and FL Studio. I wanted to solve a problem musicians face while creating beats: creating notes manually feels slow. Humming or singing a melody is much faster and more natural.</p>
+      <p>I built a feature called Voice-to-MIDI. With VOCARA, users can simply hum or sing into their microphone, and the system converts that audio directly into MIDI notes. Instead of forcing creativity into clicks, VOCARA captures creativity as sound.</p>
+      <p><strong>Under the hood:</strong> I manually calibrated Silero VAD thresholds, RMS gating, and pitch detection pipelines instead of relying on default wrappers.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-projectv">
+    <div class="modal-content glass-card tilt-card">
+      <button class="modal-close">&times;</button>
+      <h2>Project V (Ekalavya)</h2>
+      <p>Built under Ekalavya, a student-driven platform focused on growth, mentorship, and skill-building. Project V is a skill-tracking and placement portfolio platform designed specifically for engineering students in Tamil Nadu.</p>
+      <p>Most resumes are static. Project V changes that. It creates a real developmental timeline for students — showing growth, skills, verified metrics, and live GitHub activity. This helps recruiters understand not just what a student knows, but how they evolved.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-bloxd">
+    <div class="modal-content glass-card tilt-card">
+      <button class="modal-close">&times;</button>
+      <h2>BloxdioCoderAI</h2>
+      <p>An AI-powered game scripting assistant built for Bloxd.io. Using raw data directly consumed around 60,000 tokens per AI prompt, making it inefficient. So I optimized the entire workflow.</p>
+      <p>I collected and converted all usable code into structured JSON. Then I built a dual-AI pipeline (RAG):<br>
+      <strong>Key 1 — Refine AI:</strong> Understands the request, identifies coordinates/block names, and searches the JSON database.<br>
+      <strong>Key 2 — Code AI:</strong> Uses refined prompts and references to generate precise JS code.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-screamzone">
+    <div class="modal-content glass-card tilt-card">
+      <button class="modal-close">&times;</button>
+      <h2>ScreamZone</h2>
+      <p>A voice-controlled rhythm game inspired by games like Geometry Dash. Instead of pressing buttons, you control the character using your voice.</p>
+      <p>The mechanic is simple: High sound = Jump. No sound = No jump. This creates a unique gameplay experience where your voice becomes the controller. The game includes 3 different modes, each designed around sound-based movement mechanics.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-sasta">
+    <div class="modal-content glass-card tilt-card">
+      <button class="modal-close">&times;</button>
+      <h2>Sasta Trust</h2>
+      <p>A devotion and donation platform for Sasta Trust — a religious charitable organization. Supports temple maintenance, Sabarimala pilgrimages, Anna Prasadam Seva, care for the elderly, and Kanyadanam.</p>
+      <p><strong>Features:</strong> Donation tracking, occasion listings, top devotee donor leaderboard, UPI + bank transfer payment info, receipt management, and Google OAuth login.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-amrut">
+    <div class="modal-content glass-card tilt-card">
+      <button class="modal-close">&times;</button>
+      <h2>Amrut Satvik Foods</h2>
+      <p>A live e-commerce website for Satvik and organic foods. This project proves business-focused product design execution.</p>
+      <p><strong>Focus:</strong> Product display, shopping UX, customer flow, and conversion-oriented UI.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-temple">
+    <div class="modal-content glass-card tilt-card">
+      <button class="modal-close">&times;</button>
+      <h2>Bhaskararajapuram Village</h2>
+      <p>A village and heritage storytelling website. The core focus is on immersive spiritual design, capturing the essence of the temple heritage and village culture.</p>
+      <p><strong>Impact:</strong> Aligns deeply with my aesthetic for traditional storytelling through modern frontend technology.</p>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+  <div class="custom-cursor"></div>
+</body>
+</html>
