@@ -755,5 +755,10 @@ footer {
     display: none;
   }
 
-  /* Clean solid styles, removed glows */
+  /* Restore color depth on mobile with a static CSS gradient */
+  body {
+    background: radial-gradient(circle at top right, rgba(212, 163, 115, 0.12), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(212, 163, 115, 0.08), transparent 60%),
+                var(--bg-color);
+  }
 }
