@@ -371,7 +371,7 @@ const avatarCanvas = document.getElementById('avatar-canvas');
 if (avatarCanvas) {
   const ctx = avatarCanvas.getContext('2d', { willReadFrequently: true });
   const img = new Image();
-  img.src = '/avatar.jpg';
+  img.src = './avatar.jpg';
   
   let particles = [];
   let originalImageData = null;
