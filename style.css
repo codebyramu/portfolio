@@ -536,7 +536,6 @@ footer {
   font-weight: 800;
   line-height: 1;
   margin: 0;
-  white-space: nowrap;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   text-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -621,14 +620,14 @@ footer {
   position: absolute;
   background: var(--accent-gold);
 }
-.box-1 { top: 20%; right: 25%; }
-.box-1 .pointer { width: 100px; height: 1px; top: 50%; right: -100px; }
+.box-1 { top: 20%; right: 35%; }
+.box-1 .pointer { width: 150px; height: 1px; top: 50%; right: -150px; transform: rotate(25deg); transform-origin: left center; }
 
-.box-2 { top: 45%; right: 30%; transform: translateY(-50%); }
-.box-2 .pointer { width: 100px; height: 1px; top: 50%; right: -100px; }
+.box-2 { top: 45%; right: 40%; transform: translateY(-50%); }
+.box-2 .pointer { width: 120px; height: 1px; top: 50%; right: -120px; transform: rotate(0deg); transform-origin: left center; }
 
-.box-3 { bottom: 20%; right: 25%; }
-.box-3 .pointer { width: 100px; height: 1px; top: 50%; right: -100px; }
+.box-3 { bottom: 20%; right: 35%; }
+.box-3 .pointer { width: 150px; height: 1px; top: 50%; right: -150px; transform: rotate(-25deg); transform-origin: left center; }
 .welcome-wrapper {
   position: absolute;
   left: 50%;

@@ -64,16 +64,19 @@ if (introSequence) {
   // 4. (No movement, avatar stays on right, text stays on left)
   introTl.to({}, { duration: 1.5 });
   
-  // 5. Info boxes pop up one by one
+  // 5. Text fades out completely so it doesn't overlap info boxes
+  introTl.to('.intro-text-container', { autoAlpha: 0, duration: 1 });
+  
+  // 6. Info boxes pop up one by one around the avatar
   introTl.to('#box-1', { autoAlpha: 1, x: -10, duration: 0.5 })
          .to('#box-2', { autoAlpha: 1, x: -10, duration: 0.5 })
          .to('#box-3', { autoAlpha: 1, x: -10, duration: 0.5 });
          
-  // 6. Hold for a bit
+  // 7. Hold for a bit
   introTl.to({}, { duration: 1.5 });
   
-  // 7. Everything EXCEPT avatar fades out
-  introTl.to(['.intro-text-container', '.info-box'], { autoAlpha: 0, duration: 1 });
+  // 7.5. Info boxes fade out
+  introTl.to('.info-box', { autoAlpha: 0, duration: 1 });
   
   // 8. Image breaks into pixels (we animate window.explodeAnim.progress)
   introTl.to(window.explodeAnim, { progress: 80, duration: 2 });
@@ -363,12 +366,14 @@ if (avatarCanvas) {
         const x = (i / 4) % avatarCanvas.width;
         const y = Math.floor((i / 4) / avatarCanvas.width);
         if (x % particleStep === 0 && y % particleStep === 0) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 15 + 5; // Organic varied speeds
           particles.push({
             originX: x,
             originY: y,
             color: `rgba(${r},${g},${b},${data[i+3]})`,
-            vx: (Math.random() - 0.5) * 20, // random velocity
-            vy: (Math.random() - 0.5) * 20
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed
           });
         }
       }
