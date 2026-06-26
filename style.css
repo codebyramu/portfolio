@@ -732,3 +732,62 @@ footer {
   50% { opacity: 1; transform: scale(1); }
   100% { opacity: 0.3; transform: scale(0.95); }
 }
+
+@media (max-width: 768px) {
+  /* Fix nav wrap */
+  .glass-nav {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+  .nav-links {
+    margin-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .nav-links a {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  /* Fix section padding and card squishing */
+  section {
+    padding: 60px 20px;
+  }
+  .glass-card, .stereo-card {
+    padding: 30px 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* Contact section overflow fix */
+  .contact-card h2 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    word-wrap: break-word;
+  }
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .social-links a {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Modal close button overlap fix */
+  .modal-content {
+    padding: 50px 20px 30px; 
+    width: 90%;
+  }
+  .modal-close {
+    top: 15px;
+    right: 20px;
+  }
+  
+  /* Fix intro sequence overlap on mobile */
+  .box-1 { top: 10%; right: 5%; transform: scale(0.4); }
+  .box-2 { top: 40%; right: 5%; transform: translateY(-50%) scale(0.4); }
+  .box-3 { bottom: 15%; right: 5%; transform: scale(0.4); }
+}
