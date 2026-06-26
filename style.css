@@ -1,10 +1,10 @@
 :root {
-  --bg-color: #0a0a0a;
-  --text-color: #f0f0f0;
-  --accent-gold: #c9a84c;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --stereo-shadow: -5px -5px 15px rgba(255, 255, 255, 0.02), 5px 5px 15px rgba(0, 0, 0, 0.8);
+  --bg-color: #0a0a09; /* Slightly warmer dark background */
+  --text-color: #f0eae1; /* Softer, warmer off-white for less eye strain */
+  --accent-gold: #d4a373; /* Organic, warm clay/sand tone for a human feel */
+  --glass-bg: rgba(255, 250, 240, 0.03); /* Warmer glass tint */
+  --glass-border: rgba(255, 250, 240, 0.05);
+  --stereo-shadow: -5px -5px 15px rgba(255, 255, 255, 0.02), 5px 5px 15px rgba(0, 0, 0, 0.5); /* Softer shadows */
 }
 
 * {
@@ -124,43 +124,6 @@ h1.glitch {
   color: var(--text-color);
   position: relative;
   margin-bottom: 10px;
-}
-
-h1.glitch::before, h1.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-}
-h1.glitch::before {
-  left: 2px;
-  text-shadow: -1px 0 red;
-  animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-h1.glitch::after {
-  left: -2px;
-  text-shadow: -1px 0 blue;
-  animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim-1 {
-  0% { clip-path: inset(20% 0 80% 0); }
-  20% { clip-path: inset(60% 0 10% 0); }
-  40% { clip-path: inset(40% 0 50% 0); }
-  60% { clip-path: inset(80% 0 5% 0); }
-  80% { clip-path: inset(10% 0 70% 0); }
-  100% { clip-path: inset(30% 0 20% 0); }
-}
-@keyframes glitch-anim-2 {
-  0% { clip-path: inset(10% 0 60% 0); }
-  20% { clip-path: inset(30% 0 20% 0); }
-  40% { clip-path: inset(70% 0 10% 0); }
-  60% { clip-path: inset(20% 0 50% 0); }
-  80% { clip-path: inset(90% 0 5% 0); }
-  100% { clip-path: inset(5% 0 80% 0); }
 }
 
 .tagline {
@@ -662,42 +625,6 @@ footer {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: 0 0 10px rgba(255,255,255,0.2);
-}
-.glitch-vintage::before, .glitch-vintage::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-}
-.glitch-vintage::before {
-  color: #0ff;
-  z-index: -1;
-  animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-.glitch-vintage::after {
-  color: #f0f;
-  z-index: -2;
-  animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-@keyframes glitch-anim-1 {
-  0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
-  20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
-  40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
-  60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
-  80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
-  100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
-}
-@keyframes glitch-anim-2 {
-  0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
-  20% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 2px); }
-  40% { clip-path: inset(30% 0 20% 0); transform: translate(2px, -2px); }
-  60% { clip-path: inset(70% 0 10% 0); transform: translate(-1px, 1px); }
-  80% { clip-path: inset(20% 0 50% 0); transform: translate(1px, -1px); }
-  100% { clip-path: inset(50% 0 30% 0); transform: translate(-2px, 1px); }
 }
 
 #entry-overlay {
@@ -828,14 +755,5 @@ footer {
     display: none;
   }
 
-  /* Subtle static button glow, removed card floating animations which caused jitter */
-  @keyframes buttonGlow {
-    0% { box-shadow: 0 0 5px rgba(201, 168, 76, 0.2); }
-    50% { box-shadow: 0 0 15px rgba(201, 168, 76, 0.6); }
-    100% { box-shadow: 0 0 5px rgba(201, 168, 76, 0.2); }
-  }
-
-  .btn-primary, .read-more-btn {
-    animation: buttonGlow 3s infinite;
-  }
+  /* Clean solid styles, removed glows */
 }
