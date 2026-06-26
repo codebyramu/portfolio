@@ -6,6 +6,52 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 // ==========================================
+// Audio & Entry Overlay Setup
+// ==========================================
+const bgAudio = new Audio('./sounds/bg.mp3');
+bgAudio.loop = true;
+bgAudio.volume = 0.5;
+
+const hoverAudio = new Audio('./sounds/hover.mp3');
+hoverAudio.volume = 0.4;
+
+const clickAudio = new Audio('./sounds/click.mp3');
+clickAudio.volume = 0.6;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('entry-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      // Fullscreen
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen().catch(err => console.log(err));
+      }
+      
+      // Play background audio
+      bgAudio.play().catch(e => console.log('Audio play failed:', e));
+      
+      // Hide overlay
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.visibility = 'hidden', 1000);
+    });
+  }
+
+  // Hover and Click sounds for interactive elements
+  const interactives = document.querySelectorAll('.project-card, .btn-primary, .btn-secondary, a, .glitch-vintage');
+  interactives.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      hoverAudio.currentTime = 0;
+      hoverAudio.play().catch(e => {});
+    });
+    el.addEventListener('click', () => {
+      clickAudio.currentTime = 0;
+      clickAudio.play().catch(e => {});
+    });
+  });
+});
+
+// ==========================================
 // Smooth Scroll Setup (Lenis)
 // ==========================================
 const lenis = new Lenis({
@@ -75,15 +121,6 @@ if (introSequence) {
   // 7. Fade out the explosion canvas itself COMPLETELY
   introTl.to('#explosion-canvas', { autoAlpha: 0, duration: 1 })
          .to('#avatar-container', { autoAlpha: 0, duration: 0.1 }, '<');
-         
-  // 8. ONLY AFTER explosion fades out, Welcome Text comes in
-  introTl.to('#welcome-wrapper', { autoAlpha: 1, duration: 1 });
-  
-  // 9. Hold Welcome for 3 full scroll lengths
-  introTl.to({}, { duration: 3 });
-
-  // 10. Fade out Welcome text completely before scroll unpins
-  introTl.to('#welcome-wrapper', { autoAlpha: 0, duration: 1 });
 }
 
 // ==========================================
