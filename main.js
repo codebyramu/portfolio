@@ -13,7 +13,7 @@ bgAudio.loop = true;
 bgAudio.volume = 0.5;
 
 const hoverAudio = new Audio('./sounds/hover.mp3');
-hoverAudio.volume = 0.4;
+hoverAudio.volume = 0.7;
 
 const clickAudio = new Audio('./sounds/click.mp3');
 clickAudio.volume = 0.6;
