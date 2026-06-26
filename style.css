@@ -734,62 +734,92 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Fix nav wrap */
+  /* Ultra-Premium App-like Bottom Navigation */
   .glass-nav {
-    flex-direction: column;
-    padding: 15px;
-    gap: 15px;
+    top: auto;
+    bottom: 20px;
+    width: calc(100% - 30px);
+    border-radius: 25px;
+    padding: 12px;
+    flex-direction: row;
+    justify-content: center;
+    background: rgba(10, 10, 10, 0.85);
+  }
+  .glass-nav .logo {
+    display: none; /* Hide logo to make room for tabs */
   }
   .nav-links {
-    margin-left: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 0 5px;
+    margin: 0;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+  }
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
   .nav-links a {
-    margin-left: 5px;
-    margin-right: 5px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    margin: 0;
+    padding: 5px;
   }
 
-  /* Fix section padding and card squishing */
+  /* Maximize screen real estate for text (Fix squished text) */
   section {
-    padding: 60px 20px;
+    padding: 60px 15px;
   }
   .glass-card, .stereo-card {
-    padding: 30px 20px;
+    padding: 25px 15px;
     box-sizing: border-box;
     width: 100%;
   }
 
   /* Contact section overflow fix */
   .contact-card h2 {
-    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
     word-wrap: break-word;
+    margin-bottom: 15px;
   }
   .social-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
   .social-links a {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+    padding: 15px;
   }
 
-  /* Modal close button overlap fix */
+  /* Modal fixes */
   .modal-content {
-    padding: 50px 20px 30px; 
-    width: 90%;
+    padding: 40px 15px 25px; 
+    width: 92%;
+    border-radius: 15px;
   }
   .modal-close {
-    top: 15px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+  }
+  .modal-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .modal-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
   
   /* Fix intro sequence overlap on mobile */
-  .box-1 { top: 10%; right: 5%; transform: scale(0.4); }
-  .box-2 { top: 40%; right: 5%; transform: translateY(-50%) scale(0.4); }
-  .box-3 { bottom: 15%; right: 5%; transform: scale(0.4); }
+  .box-1 { top: 5%; right: 5%; transform: scale(0.45); transform-origin: top right; }
+  .box-2 { top: 35%; right: 5%; transform: translateY(-50%) scale(0.45); transform-origin: center right; }
+  .box-3 { bottom: 15%; right: 5%; transform: scale(0.45); transform-origin: bottom right; }
 
   /* Save GPU by hiding the WebGL noise shader entirely */
   #webgl-canvas {
