@@ -790,4 +790,9 @@ footer {
   .box-1 { top: 10%; right: 5%; transform: scale(0.4); }
   .box-2 { top: 40%; right: 5%; transform: translateY(-50%) scale(0.4); }
   .box-3 { bottom: 15%; right: 5%; transform: scale(0.4); }
+
+  /* Save GPU by hiding the WebGL noise shader entirely */
+  #webgl-canvas {
+    display: none;
+  }
 }

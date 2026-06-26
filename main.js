@@ -286,28 +286,30 @@ links.forEach(link => {
 function animate() {
   requestAnimationFrame(animate);
   
-  // Smooth mouse interpolation for WebGL
-  currentMouse.lerp(targetMouse, 0.1);
-  
-  material.uniforms.uTime.value = clock.getElapsedTime();
-  material.uniforms.uMouse.value.copy(currentMouse);
-  
-  renderer.render(scene, camera);
+  if (window.innerWidth > 768) {
+    // Smooth mouse interpolation for WebGL
+    currentMouse.lerp(targetMouse, 0.1);
+    
+    material.uniforms.uTime.value = clock.getElapsedTime();
+    material.uniforms.uMouse.value.copy(currentMouse);
+    
+    renderer.render(scene, camera);
 
-  // Update Custom Cursor
-  if (cursor) {
-    cursor.style.left = clientX + 'px';
-    cursor.style.top = clientY + 'px';
+    // Update Custom Cursor
+    if (cursor) {
+      cursor.style.left = clientX + 'px';
+      cursor.style.top = clientY + 'px';
+    }
+
+    // Update Spotlight Cards
+    stereoCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
   }
-
-  // Update Spotlight Cards
-  stereoCards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const y = clientY - rect.top;
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-  });
 }
 
 animate();
@@ -385,6 +387,9 @@ if (avatarCanvas) {
     // Pixel manipulation to remove white background
     const imageData = ctx.getImageData(0, 0, avatarCanvas.width, avatarCanvas.height);
     const data = imageData.data;
+    const isMobile = window.innerWidth <= 768;
+    const currentParticleStep = isMobile ? 12 : 4;
+    
     for (let i = 0; i < data.length; i += 4) {
       const r = data[i], g = data[i+1], b = data[i+2];
       if (r > 230 && g > 230 && b > 230) {
@@ -393,7 +398,7 @@ if (avatarCanvas) {
         // Create particle data for explosion
         const x = (i / 4) % avatarCanvas.width;
         const y = Math.floor((i / 4) / avatarCanvas.width);
-        if (x % particleStep === 0 && y % particleStep === 0) {
+        if (x % currentParticleStep === 0 && y % currentParticleStep === 0) {
           const angle = Math.random() * Math.PI * 2;
           const speed = Math.random() * 15 + 5; // Organic varied speeds
           particles.push({
@@ -408,6 +413,7 @@ if (avatarCanvas) {
     }
     originalImageData = imageData;
     ctx.putImageData(imageData, 0, 0);
+    window.avatarDrawn = true;
   };
 
   let targetRotX = 0, targetRotY = 0;
@@ -451,11 +457,14 @@ if (avatarCanvas) {
     if (explodeProgress > 0 && expCtx) {
       // Clear main avatar canvas
       ctx.clearRect(0, 0, avatarCanvas.width, avatarCanvas.height);
+      window.avatarDrawn = false;
       // Clear explosion canvas
       expCtx.clearRect(0, 0, explosionCanvas.width, explosionCanvas.height);
       
       // Get exact screen position of the avatar canvas
       const rect = avatarCanvas.getBoundingClientRect();
+      const isMobile = window.innerWidth <= 768;
+      const currentParticleStep = isMobile ? 12 : 4;
       
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -467,25 +476,29 @@ if (avatarCanvas) {
         const currentY = startY + (p.vy * explodeProgress * 2);
         
         expCtx.fillStyle = p.color;
-        expCtx.fillRect(currentX, currentY, particleStep, particleStep);
+        expCtx.fillRect(currentX, currentY, currentParticleStep, currentParticleStep);
       }
     } else {
       if (expCtx) expCtx.clearRect(0, 0, explosionCanvas.width, explosionCanvas.height);
-      if (originalImageData) {
+      if (originalImageData && !window.avatarDrawn) {
         ctx.putImageData(originalImageData, 0, 0);
+        window.avatarDrawn = true;
       }
     }
     
     // 2. 3D Tilt Logic
-    if (isIdle) {
-      idleTime += 0.02;
-      targetRotY = Math.sin(idleTime) * 15;
-      targetRotX = Math.sin(idleTime * 0.5) * 5;
+    if (window.innerWidth > 768) {
+      if (isIdle) {
+        idleTime += 0.05;
+        targetRotY = Math.sin(idleTime) * 10;
+        targetRotX = Math.cos(idleTime * 0.8) * 5;
+      }
+      currentRotX += (targetRotX - currentRotX) * 0.05;
+      currentRotY += (targetRotY - currentRotY) * 0.05;
+      avatarCanvas.style.transform = `perspective(1000px) rotateX(${currentRotX}deg) rotateY(${currentRotY}deg)`;
+    } else {
+      avatarCanvas.style.transform = `none`;
     }
-    currentRotX += (targetRotX - currentRotX) * 0.05;
-    currentRotY += (targetRotY - currentRotY) * 0.05;
-    
-    avatarCanvas.style.transform = `perspective(1000px) rotateX(${currentRotX}deg) rotateY(${currentRotY}deg)`;
   }
   
   animateAvatar();
