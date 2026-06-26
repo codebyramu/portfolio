@@ -729,15 +729,7 @@ He uses Antigravity IDE (AGY CLI) for AI-assisted vibe coding and writes plain-E
 **Role:** Solo builder.
 **Status:** Built.
 
----
 
-### Python Auto-Clicker / Macro Tool (Ubuntu)
-**What:** Keyboard and mouse automation tool for Ubuntu — built without `grab()` so the keyboard stays fully functional during macro execution.
-**Tech:** Python, evdev.
-**Role:** Solo builder.
-**Status:** Complete.
-
----
 
 ### CS50 Python Problem Sets
 **What:** Completed problem sets from Harvard's CS50P course.
@@ -971,15 +963,6 @@ Tech Stack: HTML5 Canvas 2D, Web Audio API, and vanilla JavaScript physics handl
 Key Specs: Tailored physics rules, rigid level speed scaling, jump cooldown mechanics, and strict real-time audio analysis.
 
 Status: Functional Web App Core.
-
-Browser & Console Automation Suite (Macros)
-What it does: A collection of highly optimized browser console macros, stealth auto-clickers, and Python scripting overrides. Includes a dedicated physical key-mashing macro configured to strike target keys at adjustable speeds without triggering text chat spam parameters.
-
-The "Why": Built to optimize performance tracking and input targeting within web-based games by engineering bypass scripts for full-screen pointer lock blockers.
-
-Tech Stack: JavaScript Console API, Hotkey Listeners, Python Input Simulation libraries.
-
-Status: Active/Internal use.
 
 3D Ursina Sandboxes
 What it does: Structural architectures for standalone 3D gaming concepts, including a custom 3D Minecraft voxel clone and a multi-room "mosquito survival" game.

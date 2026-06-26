@@ -825,4 +825,29 @@ footer {
   #webgl-canvas {
     display: none;
   }
+
+  /* Mobile-Specific Animations to keep the site alive without hover */
+  @keyframes mobileFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); box-shadow: 0 15px 25px rgba(201, 168, 76, 0.15); }
+    100% { transform: translateY(0px); }
+  }
+
+  @keyframes buttonGlow {
+    0% { box-shadow: 0 0 5px rgba(201, 168, 76, 0.2); }
+    50% { box-shadow: 0 0 15px rgba(201, 168, 76, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(201, 168, 76, 0.2); }
+  }
+
+  .stereo-card, .glass-card {
+    animation: mobileFloat 6s ease-in-out infinite;
+  }
+  
+  .stereo-card:nth-child(even), .skills-card {
+    animation-delay: 3s;
+  }
+
+  .btn-primary, .read-more-btn {
+    animation: buttonGlow 3s infinite;
+  }
 }
