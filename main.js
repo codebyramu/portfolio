@@ -48,50 +48,41 @@ if (introSequence) {
   });
 
   // Setup initial states
-  gsap.set('#ramu-text', { width: 0, opacity: 0 });
+  gsap.set('.intro-text-container', { left: '10%', xPercent: 0, opacity: 1 });
+  gsap.set('#avatar-container', { left: '75%', autoAlpha: 1 });
+  gsap.set('.speech-bubble', { scale: 0.5, autoAlpha: 0 }); 
   
-  // 1. "HI" moves left, full text expands to "HI, I'M RAMU"
-  introTl.to('.intro-text-container', { left: '10%', xPercent: 0, duration: 1 })
-         .to('#ramu-text', { width: 'auto', opacity: 1, duration: 1 }, '<');
+  // 1. Scene 1: Initial state is already set (text left, avatar right). Wait a tiny bit.
+  introTl.to({}, { duration: 0.5 });
   
-  // 2. Avatar fades in (on the right side)
-  gsap.set('#avatar-container', { left: '75%' });
-  introTl.to('#avatar-container', { autoAlpha: 1, duration: 1 });
-  
-  // 3. Subtitle fades in
-  introTl.to('#subtitle-text', { autoAlpha: 1, y: 0, duration: 1 });
-  
-  // 4. (No movement, avatar stays on right, text stays on left)
-  introTl.to({}, { duration: 1.5 });
-  
-  // 5. Text fades out completely so it doesn't overlap info boxes
-  introTl.to('.intro-text-container', { autoAlpha: 0, duration: 1 });
-  
-  // 6. Info boxes pop up one by one around the avatar
-  introTl.to('#box-1', { autoAlpha: 1, x: -10, duration: 0.5 })
-         .to('#box-2', { autoAlpha: 1, x: -10, duration: 0.5 })
-         .to('#box-3', { autoAlpha: 1, x: -10, duration: 0.5 });
+  // 2. Speech bubbles pop up one by one with a bounce effect
+  introTl.to('#box-1', { autoAlpha: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" })
+         .to('#box-2', { autoAlpha: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" })
+         .to('#box-3', { autoAlpha: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" });
          
-  // 7. Hold for a bit
-  introTl.to({}, { duration: 1.5 });
+  // 3. Hold for reading
+  introTl.to({}, { duration: 2 });
   
-  // 7.5. Info boxes fade out
-  introTl.to('.info-box', { autoAlpha: 0, duration: 1 });
+  // 4. Bubbles and Text fade out
+  introTl.to(['.intro-text-container', '.speech-bubble'], { autoAlpha: 0, duration: 1 });
   
-  // 8. Image breaks into pixels (we animate window.explodeAnim.progress)
+  // 5. Avatar slides to center
+  introTl.to('#avatar-container', { left: '50%', duration: 1.5, ease: "power2.inOut" });
+  
+  // 6. Image breaks into pixels (we animate window.explodeAnim.progress)
   introTl.to(window.explodeAnim, { progress: 80, duration: 2 });
   
-  // 8.5 Fade out the explosion canvas itself COMPLETELY
+  // 7. Fade out the explosion canvas itself COMPLETELY
   introTl.to('#explosion-canvas', { autoAlpha: 0, duration: 1 })
          .to('#avatar-container', { autoAlpha: 0, duration: 0.1 }, '<');
          
-  // 9. ONLY AFTER explosion fades out, Welcome Text comes in
+  // 8. ONLY AFTER explosion fades out, Welcome Text comes in
   introTl.to('#welcome-wrapper', { autoAlpha: 1, duration: 1 });
   
-  // 10. Hold Welcome heavily so user can read it clearly
-  introTl.to({}, { duration: 2 });
+  // 9. Hold Welcome for 3 full scroll lengths
+  introTl.to({}, { duration: 3 });
 
-  // 11. Fade out Welcome text completely before scroll unpins
+  // 10. Fade out Welcome text completely before scroll unpins
   introTl.to('#welcome-wrapper', { autoAlpha: 0, duration: 1 });
 }
 

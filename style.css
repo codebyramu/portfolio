@@ -603,31 +603,50 @@ footer {
   will-change: transform;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
-.info-box {
+.speech-bubble {
   position: absolute;
   opacity: 0;
-  background: rgba(10,10,10,0.6);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--glass-border);
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--accent-gold);
+  border-radius: 20px;
   padding: 15px 20px;
-  border-radius: 12px;
   color: #fff;
+  font-family: 'Outfit', sans-serif;
   font-size: 1rem;
+  font-weight: 300;
   z-index: 4;
-  max-width: 250px;
+  max-width: 260px;
+  transform: scale(0.5); /* for scale animation */
 }
-.info-box .pointer {
+.speech-bubble p {
+  margin: 0;
+}
+.speech-bubble .pointer {
   position: absolute;
   background: var(--accent-gold);
 }
-.box-1 { top: 20%; right: 35%; }
-.box-1 .pointer { width: 150px; height: 1px; top: 50%; right: -150px; transform: rotate(25deg); transform-origin: left center; }
+.speech-bubble .pointer::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  right: 0;
+  top: -2.5px;
+}
+/* Bubble 1 -> points to head */
+.box-1 { top: 15%; right: 40%; }
+.box-1 .pointer { width: 120px; height: 1px; top: 50%; right: -120px; transform: rotate(15deg); transform-origin: left center; }
 
-.box-2 { top: 45%; right: 40%; transform: translateY(-50%); }
-.box-2 .pointer { width: 120px; height: 1px; top: 50%; right: -120px; transform: rotate(0deg); transform-origin: left center; }
+/* Bubble 2 -> points to chest */
+.box-2 { top: 45%; right: 45%; transform: translateY(-50%) scale(0.5); }
+.box-2 .pointer { width: 150px; height: 1px; top: 50%; right: -150px; transform: rotate(5deg); transform-origin: left center; }
 
-.box-3 { bottom: 20%; right: 35%; }
-.box-3 .pointer { width: 150px; height: 1px; top: 50%; right: -150px; transform: rotate(-25deg); transform-origin: left center; }
+/* Bubble 3 -> points to lower body / arbitrary */
+.box-3 { bottom: 20%; right: 40%; }
+.box-3 .pointer { width: 120px; height: 1px; top: 50%; right: -120px; transform: rotate(-15deg); transform-origin: left center; }
 .welcome-wrapper {
   position: absolute;
   left: 50%;
