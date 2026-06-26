@@ -532,7 +532,7 @@ footer {
 }
 .giant-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(5rem, 12vw, 10rem);
+  font-size: clamp(4rem, 7vw, 7rem);
   font-weight: 800;
   line-height: 1;
   margin: 0;
@@ -637,16 +637,16 @@ footer {
   top: -2.5px;
 }
 /* Bubble 1 -> points to head */
-.box-1 { top: 15%; right: 40%; }
-.box-1 .pointer { width: 120px; height: 1px; top: 50%; right: -120px; transform: rotate(15deg); transform-origin: left center; }
+.box-1 { top: 15%; right: 28%; }
+.box-1 .pointer { width: 80px; height: 1px; top: 50%; right: -80px; transform: rotate(15deg); transform-origin: left center; }
 
 /* Bubble 2 -> points to chest */
-.box-2 { top: 45%; right: 45%; transform: translateY(-50%) scale(0.5); }
-.box-2 .pointer { width: 150px; height: 1px; top: 50%; right: -150px; transform: rotate(5deg); transform-origin: left center; }
+.box-2 { top: 45%; right: 30%; transform: translateY(-50%) scale(0.5); }
+.box-2 .pointer { width: 100px; height: 1px; top: 50%; right: -100px; transform: rotate(5deg); transform-origin: left center; }
 
 /* Bubble 3 -> points to lower body / arbitrary */
-.box-3 { bottom: 20%; right: 40%; }
-.box-3 .pointer { width: 120px; height: 1px; top: 50%; right: -120px; transform: rotate(-15deg); transform-origin: left center; }
+.box-3 { bottom: 20%; right: 28%; }
+.box-3 .pointer { width: 80px; height: 1px; top: 50%; right: -80px; transform: rotate(-15deg); transform-origin: left center; }
 .welcome-wrapper {
   position: absolute;
   left: 50%;

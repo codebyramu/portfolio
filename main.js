@@ -94,7 +94,7 @@ if (introSequence) {
   });
 
   // Setup initial states
-  gsap.set('.intro-text-container', { left: '10%', xPercent: 0, opacity: 1 });
+  gsap.set('.intro-text-container', { left: '5%', xPercent: 0, opacity: 1 });
   gsap.set('#avatar-container', { left: '75%', autoAlpha: 1 });
   gsap.set('.speech-bubble', { scale: 0.5, autoAlpha: 0 }); 
   
